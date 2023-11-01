@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import NewToDoForm from "../Component/NewToDoForm";
 
 const Home = () => {
-  return (
-    <NewToDoForm/>
-  );
-};
+  const onAddTodo = (todo) => {
+      console.log('Adding todo:', todo);
+  };
+return (
+  <div>
+    <NewToDoForm onAddTodo={onAddTodo}/>
+  </div>
+)
+}
+
 export default Home;
