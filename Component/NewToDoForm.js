@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const NewToDoForm = () => {
-  const [todo, setTodo] = useState({ title: '', desc: '', date: '' });
+  const [todo, setTodo] = useState({ title: '', desc: '', date: '', status: false });
 
   const addNewToDo = () => {
     axios.post("/api/todos", todo)
       .then((response) => {
         console.log("Todo saved:", response.data);
-        setTodo({ title: '', desc: '', date: '' });
+        setTodo({ title: '', desc: '', date: '', status: false });
       })
       .catch((error) => {
         console.error("Error saving todo:", error);
